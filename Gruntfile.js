@@ -13,7 +13,7 @@ module.exports = function(grunt) {
       }
     },
     jshint: {
-      files: ['Gruntfile.js', 'src/**/*.js'],
+      files: ['Gruntfile.js', 'src/**/*.js','specs/**/*.js'],
       options: {
         globals: {
           console: true,
@@ -43,6 +43,26 @@ module.exports = function(grunt) {
             'dist/index.html': ['dist/*.min.js'],
           }
         }
+    },
+    // mocha: {
+    //     all: {
+    //       src: ['specs/testrunner.html'],
+    //     },
+    //     options: {
+    //       run: true
+    //     }
+    // },
+    mochaTest: {
+      test: {
+        options: {
+          reporter: 'spec',
+          captureFile: 'results.txt', // Optionally capture the reporter output to a file
+          quiet: false, // Optionally suppress output to standard out (defaults to false)
+          clearRequireCache: false, // Optionally clear the require cache before running tests (defaults to false)
+          noFail: false // Optionally set to not fail on failed tests (will still fail on other errors)
+        },
+        src: ['specs/**/*.spec.js']
+      }
     },
     watch: {
         files: ['<%= jshint.files %>','src/*.html'],
@@ -84,8 +104,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-injector');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-browser-sync');
+  grunt.loadNpmTasks('grunt-mocha-test');
 
-  grunt.registerTask('test', ['jshint']);
+  grunt.registerTask('test', ['mochaTest']);
   grunt.registerTask('dev', ['jshint','injector:dev','browserSync:dev','watch']);
   grunt.registerTask('prod', ['jshint','copy','injector:prod','uglify','browserSync:prod','watch']);
 
