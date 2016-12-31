@@ -1,0 +1,27 @@
+{
+  "name": "solution",
+  "version": "1.0.0",
+  "description": "Task for Javascript developers",
+  "main": "solution.js",
+  "scripts": {
+    "start": "webpack"
+  },
+  "keywords": [
+    "js"
+  ],
+  "author": "Carolyn Ulfe",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "grunt": "^1.0.1",
+    "grunt-browser-sync": "^2.2.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-injector": "^1.1.0",
+    "grunt-mocha": "^1.0.2",
+    "mocha": "^3.2.0"
+  }
+}
