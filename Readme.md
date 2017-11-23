@@ -1,4 +1,4 @@
-###CeleraOne Application-Task for JavaScript developers (version 0.3)
+### CeleraOne Application-Task for JavaScript developers (version 0.3)
 
 The porpose of this task is to generate a table from data.
 we would like that the code will be generic as posible, since the data can change.
@@ -9,6 +9,4 @@ we would like that the code will be generic as posible, since the data can chang
 
 2. Add a event click handler to every <code>th</code> of table so that it will sort rows by value (high to low)     
 
-´´´ 
-DO NOT use any JS libraries like jQuery/underscore.js/Lo-Dash. Your code should be in PURE JavaScript
-´´´
+**DO NOT use any JS libraries like jQuery/underscore.js/Lo-Dash. Your code should be in PURE JavaScript**
